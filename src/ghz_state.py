@@ -1,6 +1,6 @@
 """
 Quantum Logic Playground: GHZ State (Greenberger–Horne–Zeilinger) Implementation
-Author: [Senin Adın]
+Author: [Taha Erdem Ersözlü]
 
 This script demonstrates multi-qubit entanglement.
 Standard GHZ state is: (|000> + |111>) / sqrt(2)
@@ -28,7 +28,6 @@ def create_ghz_circuit(n_qubits=3):
     # Step 2: Entangle all subsequent qubits in a CNOT chain
     # This spreads the superposition to q1, q2, ... qn
     for i in range(n_qubits - 1):
-        # Control qubit: i, Target qubit: i+1
         qc.cx(i, i+1)
         
     return qc
@@ -46,8 +45,6 @@ def run_simulation(qc_with_meas):
     counts = result.get_counts()
     return counts
 
-
-# MAIN EXECUTION
 
 if __name__ == "__main__":
     QUBIT_COUNT = 3  
